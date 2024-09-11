@@ -1,0 +1,102 @@
+.expense-main {
+  display: flex;
+  gap: 1rem;
+  .history {
+    /* width: 30%; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    padding-left: 2rem;
+    margin-top: 3rem;
+  }
+}
+
+.expense-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  /* width: 30%; */
+  flex-direction: column;
+}
+
+label {
+  font-size: 1rem;
+  display: block;
+  font-weight: bold;
+}
+
+input {
+  height: 1.6rem;
+  width: 16rem;
+  font-family: poppins;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+select {
+  width: 17rem;
+  height: 2.2rem;
+  border-radius: 1rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1rem;
+  font-family: poppins;
+}
+
+#button {
+  width: 17rem;
+  height: 2.5rem;
+  border-radius: 1.5rem;
+  border: none;
+  font-size: 1rem;
+  font-family: poppins;
+  background-color: rgb(255, 72, 72);
+  color: white;
+}
+
+.balance-info {
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.expense-img {
+  width: 40vw;
+  img {
+    height: 95%;
+    width: 85%;
+  }
+}
+
+.expense-middle {
+  /* width: 30%; */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: -5rem;
+  margin-top: -2rem;
+  gap: 2rem;
+}
+
+.balance-header {
+  h {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+.expense {
+  h {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
