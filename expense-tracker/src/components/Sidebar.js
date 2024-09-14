@@ -51,11 +51,11 @@ function Sidebar() {
           </a>
         </li>
         <li>
-          <a href="#settings">
-            <img src="icons/settings.png" alt="Settings Icon" />
+          <Link to="/settings">
+            <img src="icons/settings.png" alt="Add Categories Icon" />
             <br />
             Settings
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

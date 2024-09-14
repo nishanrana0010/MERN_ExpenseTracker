@@ -1,0 +1,32 @@
+.settings-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+}
+
+.logout-button {
+  background-color: #f44336; /* Red color for logout button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 1.5rem;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.settings-main {
+  display: flex;
+}

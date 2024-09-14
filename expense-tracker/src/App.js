@@ -9,6 +9,7 @@ import { useState, useEffect } from "react"; // Import React and hooks
 import axios from "axios";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import Settings from "./pages/Settings/Settings";
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -49,6 +50,7 @@ function App() {
             <Reports transactions={transactions} onDelete={handleDelete} />
           }
         />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );

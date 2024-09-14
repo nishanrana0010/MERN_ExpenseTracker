@@ -94,23 +94,29 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: rgb(252, 149, 149);
+    background-color: rgb(110, 234, 118);
+    background-color: linear-gradient(
+      230deg,
+      rgb(39, 252, 53) 30%,
+      rgba(28, 137, 81, 1) 71%,
+      rgb(18, 250, 111) 100%,
+      rgba(194, 113, 0, 1) 100%
+    );
     gap: 1rem;
     color: white;
-    background-image: url("https://storyset.com/illustration/sign-up/bro#FB83B1FF&hide=&hide=simple");
-    background-size: cover; /* This will make the image cover the entire background */
-    background-repeat: no-repeat; /* This prevents the image from repeating */
-    background-position: center center;
 
     button {
       padding: 0.7rem;
       width: 12rem;
       border-radius: 3rem;
       font-size: 1.2rem;
-      color: black;
-      background-color: rgb(232, 115, 171);
+      color: rgb(245, 245, 245);
+      background-color: rgb(96, 210, 84);
       border: 1px solid white;
       transition: transform 0.3s ease;
+      a {
+        color: white;
+      }
     }
     button:hover {
       transform: scale(1.2);

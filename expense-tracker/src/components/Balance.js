@@ -10,15 +10,16 @@ const ExpenseTracker = () => {
   const [amount, setAmount] = useState("");
   const [transactionType, setTransactionType] = useState("income");
   const [category, setCategory] = useState("");
-
+  const [categories, setCategories] = useState([]);
   const [balance, setBalance] = useState(1000);
   const [income, setIncome] = useState(600);
   const [expense, setExpense] = useState(500);
   const [transactions, setTransactions] = useState([]);
 
-  const incomeCategories = ["Salary", "Freelance", "Investments"];
-  const expenseCategories = ["Food", "Travel", "Clothing", "Rent"];
+  const [incomeCategories, setIncomeCategories] = useState([]);
+  const [expenseCategories, setExpenseCategories] = useState([]);
 
+  //Fetch datas and add it to the info divs
   const fetchTransactions = async () => {
     try {
       const response = await axios.get("http://localhost:5000/transactions");
@@ -42,7 +43,29 @@ const ExpenseTracker = () => {
     }
   };
 
+  // Fetch categories from the backend
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/categories");
+      const categoriesData = response.data;
+
+      // Assuming the categories data has a structure like { type: 'income'/'expense', name: 'Category Name' }
+      const incomeCategories = categoriesData.filter(
+        (cat) => cat.type === "income"
+      );
+      const expenseCategories = categoriesData.filter(
+        (cat) => cat.type === "expense"
+      );
+
+      setIncomeCategories(incomeCategories);
+      setExpenseCategories(expenseCategories);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+
   useEffect(() => {
+    fetchCategories();
     fetchTransactions();
   }, []);
 
@@ -93,10 +116,10 @@ const ExpenseTracker = () => {
     }
 
     // Reset form
-    // setTitle("");
-    // setAmount("");
-    // setCategory("");
-    // setTransactionType("income");
+    setTitle("");
+    setAmount("");
+    setCategory("");
+    setTransactionType("income");
   };
 
   return (
@@ -166,13 +189,18 @@ const ExpenseTracker = () => {
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
-                <option value="">Select Category</option>
+                <option
+                  value="disabled"
+                  style={{ backgroundColor: "rgb(221, 221, 221)" }}
+                >
+                  Select Category
+                </option>
                 {(transactionType === "income"
                   ? incomeCategories
                   : expenseCategories
                 ).map((cat) => (
-                  <option key={cat} value={cat}>
-                    {cat}
+                  <option key={cat._id} value={cat.name}>
+                    {cat.name}
                   </option>
                 ))}
               </select>

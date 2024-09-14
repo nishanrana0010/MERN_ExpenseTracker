@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"; // Make sure to install axios with `npm install axios`
-import "./Login.css"; // Make sure to have your CSS file in the same directory or adjust the path
+import axios from "axios";
+import "./Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -12,20 +12,20 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Send login request to the backend
+      //  login request to the backend
       const response = await axios.post("http://localhost:5000/login", {
         username,
         password,
       });
 
       if (response.status === 200) {
-        // Assuming the response contains a token
+        // token
         localStorage.setItem("authToken", response.data.token);
         alert("Login successful");
         navigate("/dashboard"); // Redirect to the dashboard or main page
       }
     } catch (error) {
-      alert("Invalid username or password"); // Set error message
+      alert("Invalid username or password");
     }
   };
 
